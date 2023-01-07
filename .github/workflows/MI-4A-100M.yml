@@ -124,7 +124,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y/d' .config # 包括椭圆曲线 （EC） 到 openssl 库。~0.1兆字节
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD=y/d' .config # 包括 xUPNPd IPTV 媒体服务器。~0.3兆字节
         #echo "自定义项=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=Y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=Y" >> .config
 
         #########################################################################################
         sudo ./clear_tree
