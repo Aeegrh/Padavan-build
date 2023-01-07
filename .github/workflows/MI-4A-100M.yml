@@ -107,10 +107,10 @@ jobs:
         #sed -i '/自定义项/d' .config
         ### Include SMB (and WINS) server. ~1.5MB 
         sed -i '/CONFIG_FIRMWARE_ENABLE_USB=y/d' .config  # 启用 USB 支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_UFSD=y/d' .config # 通过 Paragon “ufsd” 驱动程序启用 NTFS 文件系统支持。~0.4兆字节
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT2=y/d' .config # 启用 EXT2 文件系统支持。~0.1兆字节
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT3=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT4=y/d' .config
+        #sed -i '/CONFIG_FIRMWARE_ENABLE_UFSD=y/d' .config # 通过 Paragon “ufsd” 驱动程序启用 NTFS 文件系统支持。~0.4兆字节
+        #sed -i '/CONFIG_FIRMWARE_ENABLE_EXT2=y/d' .config # 启用 EXT2 文件系统支持。~0.1兆字节
+        #sed -i '/CONFIG_FIRMWARE_ENABLE_EXT3=y/d' .config
+        #sed -i '/CONFIG_FIRMWARE_ENABLE_EXT4=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SERIAL=y/d' .config # 包括 USB 串行模块（例如 pl2303）。~0.03兆字节
         sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO=y/d' .config # 包括 USB 音频模块 ~0.46MB
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD=y/d' .config # 包括 SMB（和 WINS）服务器。~1.5兆字节
