@@ -108,25 +108,19 @@ jobs:
         ### Include SMB (and WINS) server. ~1.5MB
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NPC=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY=y/d' .config
-        
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3=y' .config
-        
-
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO=y/d' .config
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3=y' .config
         #echo "自定义项=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=Y" >> .config
 
         #########################################################################################
         sudo ./clear_tree
