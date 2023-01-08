@@ -39,7 +39,7 @@ jobs:
         if [ $KERNEL = "4.4" ] ; then
         git clone --depth=1 https://github.com/MeIsReallyBa/padavan-4.4.git /opt/rt-n56u
         else
-        git clone --depth=1 https://github.com/Aeegrh/Padavan.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/hy5528/Padavan.git /opt/rt-n56u
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
@@ -87,7 +87,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config # simple-obfs混淆插件
-        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
+        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config #SS server
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
@@ -113,11 +113,12 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config # 包括 Aria2 下载管理器。openssl ~1.2MB， aria2 ~3.5MB
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config # 包括 Aria2 WEB 控件。~0.7兆字节
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_XRAY=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH=y/d' .config # 包含 OpenSSH 而不是 dropbear。openssl ~1.2MB， openssh ~1.0MB
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y/d' .config # 包括椭圆曲线 （EC） 到 openssl 库。~0.1兆字节
         #echo "自定义项=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
